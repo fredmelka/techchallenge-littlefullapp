@@ -17,28 +17,31 @@ async function getPhoneDetails() {
     let response = {};
     try {response = await axios.get(`${SERVER_URI}/phones/${id}`)}
     catch (error) {console.log(error)};
-    console.log('response', response);
     setPhone(response.data.data);
-    console.log('phone', phone);
 };
-
-useEffect(() => {console.log('effect ran', id); getPhoneDetails();}, []);
-
-if (!id) {return <><p>NO PHONE TO DISLAY!</p></>}
 
 let {name, manufacturer, description, price, imageFileName, processor, ram} = phone;
 
+useEffect(() => {getPhoneDetails()}, [id]);
+
+if (!id) {return <><p>NO PHONE TO DISLAY!</p></>}
+
 return (
     <>
-    <h2>I am the Phone Details page {id} </h2>
-    <h2>{name} - Key Features are:</h2>
+    <h2>I am the Phone Details page!</h2>
+    <br />
+    <h3>{name} - Key Features are:</h3>
     <table>
         <tbody>
         <tr><td>Manufactuer :</td><td>{manufacturer}</td></tr>
         <tr><td>Price :</td><td>{price}</td></tr>
         <tr><td>RAM :</td><td>{ram}</td></tr>
+        <tr><td>Processor :</td> <td>{processor}</td></tr>
         </tbody>
     </table>
+    <p>{description}</p>
+    <br />
+    <img src={`/assets/${imageFileName}`} alt={imageFileName} width='350px'/>
     <br />
     <Link to='/'><button>Return to List</button></Link>
     </>);

@@ -6,10 +6,10 @@ import { createBrowserRouter }          from 'react-router-dom';
 import { createRoutesFromElements }     from 'react-router-dom';
 
 
-import ErrorPage                        from './Error.jsx';
-import PhoneList                        from './Phones.list.jsx';
-import PhoneDetail                      from './Phone.details.jsx';
-import Root                             from './Root.jsx';
+import ErrorPage                        from '../pages/Error.jsx';
+import PhoneList                        from '../pages/Phones.list.jsx';
+import PhoneDetail                      from '../pages/Phone.details.jsx';
+import Root                             from '../pages/Root.jsx';
  
 import './App.css';
 
