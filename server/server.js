@@ -22,9 +22,8 @@ let getAllPhones = (request, response, next) => {
 
 let getOnePhoneDetails = (request, response, next) => {
     let {id} = request.params;
-    console.log(typeof id);
-    let phone = data.filter(phone => phone.id === Number(id));
-    return response.status(200).json({succes: true, data: phone});
+    let phone = data.find(phone => phone.id === Number(id));
+    return response.status(200).json({success: true, data: phone});
 };
 
 // ROUTES
