@@ -25,7 +25,7 @@ return (
   <h2>I am the Phone Cave App!</h2>
   {/* <br/> */}
   <ul>
-    {phoneList.map((phone) => <Link to={`/${phone.id}`}><li key={phone.id}>{phone.name}</li></Link>)}
+    {phoneList.map((phone) => <Link to={`${phone.id}`}><li key={phone.id}>{phone.name}</li></Link>)}
   </ul>
   </>);
 };

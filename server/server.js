@@ -1,9 +1,12 @@
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const data = require('../data/phones.json');
+const FRONT_URL = 'http://localhost:5173';
 
+app.use(cors({credentials: true, origin: FRONT_URL}));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
